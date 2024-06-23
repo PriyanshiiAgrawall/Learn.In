@@ -16,19 +16,25 @@ const OTPSchema = new mongoose.Schema({
     }
 })
 
+
+//pre-middleware 
+//function to send otp mail
+
 async function sendVerificationMail(email, otp) {
     try {
-        const mailResponse = await mailSender(email, "Verification email from StudyNotion", otp)
+        const mailResponse = await mailSender(email, "Verification email from Learn.In", otp)
         console.log("email sent successfully", mailResponse)
     }
     catch (err) {
         console.log("error occured while sending verification mail", err.message)
     }
 }
+//db me entry "save" hone se "pre"
+//"next" is callback function used to signal mongoose to continue save operation as this function has finished it's task(go to next middleware)
 
 OTPSchema.pre("save", async function (next) {
     await sendVerificationMail(this.email, this.otp);
-    next()
+    next();
 })
 
 

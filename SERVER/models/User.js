@@ -21,10 +21,18 @@ const userSchema = new mongoose.Schema({
         required: true,
 
     },
+    confirmPassword: {
+        type: String,
+        required: true,
+    },
     accountType: {
         type: String,
         required: true,
         enum: ["Admin", "Student", "Instructor"]
+    },
+    contactNumber: {
+        type: Number,
+
     },
     additionalDetails: {
         type: mongoose.Schema.Types.ObjectId,

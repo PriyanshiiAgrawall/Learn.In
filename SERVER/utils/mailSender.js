@@ -10,7 +10,7 @@ const mailSender = async (email, title, body) => {
             }
         })
         let info = await nodemailer.sendMail({
-            from: 'StydyNotion || An Ed-Tech Platform',
+            from: 'Learn.In || An Ed-Tech Platform',
             to: `${email}`,
             subject: `${title}`,
             html: `${body}`,
