@@ -1,12 +1,18 @@
 /** @type {import('tailwindcss').Config} */
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
 module.exports = {
-  content: [],
+  content: [
+    "./src/**/*.{html,js}",
+  ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        richblack: {
+          900: '#your-color-code-here',
+        },
+      },
+    },
   },
-  plugins: [],
+  plugins: [require('tailwindcss'),
+  require('autoprefixer'),],
 }
 
