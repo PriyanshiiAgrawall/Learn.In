@@ -6,9 +6,11 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        richblack: {
-          900: '#your-color-code-here',
-        },
+        'richblack-800': '#0A0B0D',
+        'richblack-5': '#F1F2F3',
+        'richblack-900': '#0B0C0E',
+        'richblack-700': '#101114',
+        'richblack-400': '#2C2E33',
       },
     },
   },
