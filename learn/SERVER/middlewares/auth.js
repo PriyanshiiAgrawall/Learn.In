@@ -6,7 +6,7 @@ exports.auth = async (req, res, next) => {
 
     try {
         //extract token
-        const token = req.body.token || req.cookies.token || req.header("Authorisation").replace("Bearer ", "");
+        const token = req.body.token || req.cookies.token || req.header("Authorization").replace("Bearer ", "");
         //if token is not found
         if (!token) {
             return res.status(401).json({
@@ -94,7 +94,7 @@ exports.isInstructor = async (req, res, next) => {
 
 exports.isAdmin = async (req, res, next) => {
     try {
-        if (req.user.role !== "Admin ") {
+        if (req.user.role !== "Admin") {
             return res.status(401).json({
                 success: false,
                 message: "This is a protected route for Admin ",

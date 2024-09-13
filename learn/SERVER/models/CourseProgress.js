@@ -6,8 +6,8 @@ const courseProgessSchema = new mongoose.Schema({
         ref: "Course",
     },
     completedVideos: [{
-        tyrpe: mongoose.Schema.Types.ObjectId,
-        ref: "SubSection"
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Subsection"
     }]
 
 

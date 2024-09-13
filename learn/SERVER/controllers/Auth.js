@@ -7,7 +7,7 @@ require("dotenv").config();
 
 //before signup functionality otp needs to be send
 //send OTP 
-exports.sendOTP = async (req, res) => {
+exports.sendotp = async (req, res) => {
     try {
         //fetch email from req ki body
         const { email } = req.body

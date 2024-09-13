@@ -2,6 +2,7 @@
 const express = require("express")
 const router = express.Router()
 
+
 // Import the required controllers and middleware functions
 const {
     login,
@@ -9,6 +10,8 @@ const {
     sendotp,
     changePassword,
 } = require("../controllers/Auth")
+
+console.log(login, signup, sendotp, changePassword);
 const {
     resetPasswordToken,
     resetPassword,
